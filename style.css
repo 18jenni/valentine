@@ -1,0 +1,180 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbfdfc
+  }
+
+  .love-card{
+    position: relative;
+    width: 200px;
+    height:300px;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 3s;
+    
+  }
+  .love-card{
+    animation: lcard 1s infinite alternate;
+  }
+
+  input#open {
+    display: none;
+  }
+  .card-front-boy {
+    position: relative;
+    background-color: #fbfdfc;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    transform-origin: left;
+    transition:.3s;
+   
+  }
+  .card-front{
+    position: relative;
+    background-color:#fbfdfc;
+    width: 200px;
+    height:300px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow:  100px 20px 100px rgba(44, 27, 27, 0.034), 30px 0 50px rgba(163, 75, 75, 0.082); 
+    transition: .5s;
+    
+  }
+  .text{
+    background-color: #fbfdfc;
+  }
+
+  .card-inside {
+    position: absolute;
+    background-color: #fbfdfc;
+    width: 200px;
+    height:300px;
+    z-index:-1;
+    left:0;
+    top:0;
+    border: 1px solid #eeecec77;
+  }
+  
+  .open {
+    position: absolute;
+    width: 200px;
+    height:300px;
+    left:0;
+    top:0;
+    background-color: transparent;
+    z-index:6;
+    cursor: pointer;
+    box-shadow:  100px 20px 100px rgba(44, 27, 27, 0.034), 30px 0 50px rgba(163, 75, 75, 0.082);  
+    transition: .5s;
+  }
+  .open:hover{
+    box-shadow:  100px 20px 100px rgba(44, 27, 27, 0.034), 30px 0 50px rgba(163, 75, 75, 0.171);  
+  }
+  
+  #open:checked ~ .card-front {
+    
+    transform: rotateY(-155deg);
+    background-color: #fbfdfc;
+    border: 1px solid #eeecec77;
+    background-color: #fbfdfc;
+  }
+  
+  #open:checked ~ .card-front:before {
+    z-index:5;
+  }
+  .card-front:before {
+    content:"";
+    position: absolute;
+    width: 200px;
+    height:300px;
+    top: 10px;
+    background-color: #fbfdfc;
+    left: 1px;
+  }
+  @keyframes lcard {
+    from {
+      box-shadow:  100px 20px 100px #e91b1717, 30px 0 50px rgba(248, 2, 2, 0.089); 
+    }
+    to {
+      box-shadow:  100px 20px 100px #e91b172f, 30px 0 50px rgba(4, 48, 241, 0.144); 
+    }
+  }
+  
+  .text {
+    position: absolute;
+    color: #e91c17;
+    font-family: 'Cedarville Cursive', cursive;
+    top:260px;
+    width:200px;
+    text-align: center;
+    font-size:15px;
+    background-color: #fbfdfc;
+    
+  }
+ 
+  .text:before {
+    background-color: #fbfdfc;
+    content:"To W";
+    position: absolute;
+    width:80px;
+    color: #e91c17;
+    font-weight: 900;
+    text-align: center;
+    line-height: 10px;
+    top:-42.5px;
+    left:61px;
+    
+  }
+  
+  .text:after {
+    content:"";
+    position: absolute;
+    width:0;
+    height:0;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent; 
+    top:-185px;
+    left: 95px;
+  }
+  
+/* Inside of card*/ 
+
+.card-inside:before {
+  content:"";
+  position: absolute;
+  width: 180px;
+  height: 280px;
+  background-color: #fbfdfc;
+  top: 10px;
+  left: 10px;  
+}
+
+.title {
+  position: absolute;
+  color: #e91c17;
+  font-size:30px;
+  font-weight: 900;
+  font-family: 'Cedarville Cursive', cursive;
+  line-height: 25px;
+  text-align: center;
+  top:45px;
+  width:200px;
+  background-color: #fbfdfc;
+}
+
+.wishes {
+  position: absolute;
+  width: 150px;
+  text-align: center;
+  font-family: 'Cedarville Cursive', cursive;
+  line-height:15px;
+  font-size: 80%;
+  color: #e91c17;
+
+  top: 45%;
+  left:25px;
+  background-color: #fbfdfc;
+}
